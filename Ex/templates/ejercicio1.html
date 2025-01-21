@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+
+<title>Ejercicio_1</title>
+
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h2>Calculo de compras</h2>
+        </div>
+
+        <div>
+            <form method="POST">
+                <label for="name">Ingresa tu nombre:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="age">Ingresa tu edad:</label><br>
+                <input type="number" id="age" name="age" required><br><br>
+
+                <label for="cans">Ingresa la cantidad de tarros de pintura a comprar:</label><br>
+                <input type="number" id="cans" name="cans" required><br><br>
+
+                <button class="button" type="submit">Calcular</button>
+            </form>
+
+            {% if result %}
+            <h2>Resultado</h2>
+            <p>Nombre del cliente: {{ result.name }}</p>
+            <p>Total sin descuento: ${{ result.total_without_discount }}</p>
+            <p>Descuento aplicado: ${{ result.discount_amount }}</p>
+            <p>Total a pagar: ${{ result.total_with_discount }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
